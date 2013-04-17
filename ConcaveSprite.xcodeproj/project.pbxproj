@@ -142,6 +142,8 @@
 		D327BF7D171E13FC0089250C /* libChipmunkPro-iPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D327BF7B171E13FC0089250C /* libChipmunkPro-iPhone.a */; };
 		D327BF7E171E16FE0089250C /* ChipmunkGLRenderBufferSampler.m in Sources */ = {isa = PBXBuildFile; fileRef = D327BF4F171E13BB0089250C /* ChipmunkGLRenderBufferSampler.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D327BF7F171E197E0089250C /* CCPhysicsSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = D327BD9F171E0DEA0089250C /* CCPhysicsSprite.mm */; };
+		D327BF8E171E29450089250C /* Heart-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = D327BF8C171E29450089250C /* Heart-hd.png */; };
+		D327BF8F171E29450089250C /* Heart.png in Resources */ = {isa = PBXBuildFile; fileRef = D327BF8D171E29450089250C /* Heart.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -493,6 +495,8 @@
 		D327BF7A171E13FC0089250C /* cpPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpPolyline.h; sourceTree = "<group>"; };
 		D327BF7B171E13FC0089250C /* libChipmunkPro-iPhone.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libChipmunkPro-iPhone.a"; sourceTree = "<group>"; };
 		D327BF7C171E13FC0089250C /* ObjectiveChipmunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveChipmunk.h; sourceTree = "<group>"; };
+		D327BF8C171E29450089250C /* Heart-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Heart-hd.png"; path = "Resources/Heart-hd.png"; sourceTree = "<group>"; };
+		D327BF8D171E29450089250C /* Heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Heart.png; path = Resources/Heart.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -582,6 +586,8 @@
 		D327BD01171E0DE90089250C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D327BF8C171E29450089250C /* Heart-hd.png */,
+				D327BF8D171E29450089250C /* Heart.png */,
 				D327BF45171E126D0089250C /* Star-hd.png */,
 				D327BF46171E126D0089250C /* Star.png */,
 				D327BD02171E0DE90089250C /* Default.png */,
@@ -1110,6 +1116,8 @@
 				D327BE6E171E0DEB0089250C /* ChangeLog in Resources */,
 				D327BF47171E126D0089250C /* Star-hd.png in Resources */,
 				D327BF48171E126D0089250C /* Star.png in Resources */,
+				D327BF8E171E29450089250C /* Heart-hd.png in Resources */,
+				D327BF8F171E29450089250C /* Heart.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1407,6 +1415,7 @@
 				D327BE9B171E0DEB0089250C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D327BEA9171E0E2D0089250C /* Build configuration list for PBXNativeTarget "Cocos2D" */ = {
 			isa = XCConfigurationList;
@@ -1415,6 +1424,7 @@
 				D327BEAB171E0E2D0089250C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

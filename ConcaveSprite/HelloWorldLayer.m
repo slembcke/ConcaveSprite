@@ -48,21 +48,22 @@
 		[_space addBounds:rect thickness:10.0 elasticity:1.0 friction:0.0 layers:CP_ALL_LAYERS group:CP_NO_GROUP collisionType:nil];
 		
 		_debugNode = [CCPhysicsDebugNode debugNodeForChipmunkSpace:_space];
+		_debugNode.visible = FALSE;
 		[self addChild:_debugNode z:1000];
 		
-		[self addStarAt:ccp(210, 220)];
-		[self addStarAt:ccp(270, 220)];
-		[self addStarAt:ccp(180, 100)];
-		[self addStarAt:ccp(240, 100)];
-		[self addStarAt:ccp(300, 100)];
+		[self addSprite:@"Heart.png" at:ccp(210, 220)];
+		[self addSprite:@"Heart.png" at:ccp(270, 220)];
+		[self addSprite:@"Star.png" at:ccp(180, 100)];
+		[self addSprite:@"Star.png" at:ccp(240, 100)];
+		[self addSprite:@"Star.png" at:ccp(300, 100)];
 	}
 	
 	return self;
 }
 
--(void)addStarAt:(CGPoint)point
+-(void)addSprite:(NSString *)image at:(CGPoint)point
 {
-	ConcaveSprite *sprite = [ConcaveSprite spriteWithFile:@"Star.png"];
+	ConcaveSprite *sprite = [ConcaveSprite spriteWithFile:image];
 	sprite.position = point;
 	sprite.elasticity = 1.0;
 	[self addChild:sprite];
@@ -80,10 +81,6 @@
 {
 	// Just doing a dumb fixed update here...
 	[_space step:1.0/60.0];
-	
-	for(ChipmunkBody *body in _space.bodies){
-		[_debugNode drawDot:body.pos radius:10.0 color:ccc4f(0, 0, 1, 1)];
-	}
 }
 
 @end
