@@ -48,24 +48,28 @@
 		[_space addBounds:rect thickness:10.0 elasticity:1.0 friction:0.0 layers:CP_ALL_LAYERS group:CP_NO_GROUP collisionType:nil];
 		
 		_debugNode = [CCPhysicsDebugNode debugNodeForChipmunkSpace:_space];
-		_debugNode.visible = FALSE;
+		_debugNode.visible = TRUE;
 		[self addChild:_debugNode z:1000];
 		
-		[self addSprite:@"Heart.png" at:ccp(210, 220)];
-		[self addSprite:@"Heart.png" at:ccp(270, 220)];
-		[self addSprite:@"Star.png" at:ccp(180, 100)];
-		[self addSprite:@"Star.png" at:ccp(240, 100)];
-		[self addSprite:@"Star.png" at:ccp(300, 100)];
+		[self addSprite:@"Heart.png" at:ccp(210, 220) isStatic:FALSE];
+		[self addSprite:@"Heart.png" at:ccp(270, 220) isStatic:FALSE];
+		[self addSprite:@"Star.png" at:ccp(180, 100) isStatic:FALSE];
+		[self addSprite:@"Star.png" at:ccp(240, 100) isStatic:TRUE];
+		[self addSprite:@"Star.png" at:ccp(300, 100) isStatic:FALSE];
 	}
 	
 	return self;
 }
 
--(void)addSprite:(NSString *)image at:(CGPoint)point
+-(void)addSprite:(NSString *)image at:(CGPoint)point isStatic:(bool)isStatic
 {
 	ConcaveSprite *sprite = [ConcaveSprite spriteWithFile:image];
-	sprite.position = point;
+	sprite.isStatic = isStatic;
 	sprite.elasticity = 1.0;
+	[sprite setupPhysics];
+	
+	// NOTE: must call setupPhysics before touching the position property since that sets the chipmunkBody property.
+	sprite.position = point;
 	[self addChild:sprite];
 	[_space add:sprite];
 }

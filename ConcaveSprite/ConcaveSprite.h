@@ -27,7 +27,18 @@
 @property(nonatomic, readonly) NSArray *chipmunkObjects;
 
 @property(nonatomic, assign) unsigned int downsample;
+@property(nonatomic, assign) bool isStatic;
 @property(nonatomic, assign) cpFloat density;
 @property(nonatomic, assign) cpFloat elasticity;
+
+// Creates a body and sets up shapes based on the sprite's alpha.
+// 'qualityThreshold' is how closely (in points) that the shape should match the original.
+// 'concavityThreshold' allows you to control how many convex polygons the final shape is split into.
+// This controls how deep a dimple must be in (in points) the surface of a shape to cause it to be split at that point.
+// If you want a single convex polygon, you can pass INFINITY for the concavity threshold.
+-(void)setupPhysicsWithShapeQuality:(cpFloat)qualityThreshold concavityThreshold:(cpFloat)concavityThreshold;
+
+// Calls the above method with 2.0 for both thresholds.
+-(void)setupPhysics;
 
 @end
