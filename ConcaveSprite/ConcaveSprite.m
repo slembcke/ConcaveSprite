@@ -186,4 +186,15 @@
 	}
 }
 
+-(void)setData:(id)data
+{
+	_data = data;
+	
+	for(id obj in self.chipmunkObjects){
+		if([obj isKindOfClass:[ChipmunkShape class]]){
+			((ChipmunkShape *)obj).data = data;
+		}
+	}
+}
+
 @end

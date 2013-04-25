@@ -40,6 +40,8 @@
 @property(nonatomic, assign) cpGroup group;
 @property(nonatomic, assign) cpLayers layers;
 
+@property(nonatomic, assign) id data;
+
 // Creates a body and sets up shapes based on the sprite's alpha.
 // 'qualityThreshold' is how closely (in points) that the shape should match the original.
 // 'concavityThreshold' allows you to control how many convex polygons the final shape is split into.
