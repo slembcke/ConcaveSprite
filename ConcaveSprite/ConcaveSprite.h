@@ -27,9 +27,18 @@
 @property(nonatomic, readonly) NSArray *chipmunkObjects;
 
 @property(nonatomic, assign) unsigned int downsample;
-@property(nonatomic, assign) bool isStatic;
 @property(nonatomic, assign) cpFloat density;
+
+@property(nonatomic, assign) bool isStatic;
+@property(nonatomic, assign) bool sensor;
+
 @property(nonatomic, assign) cpFloat elasticity;
+@property(nonatomic, assign) cpFloat friction;
+@property(nonatomic, assign) cpVect surfaceVel;
+
+@property(nonatomic, assign) cpCollisionType collisionType;
+@property(nonatomic, assign) cpGroup group;
+@property(nonatomic, assign) cpLayers layers;
 
 // Creates a body and sets up shapes based on the sprite's alpha.
 // 'qualityThreshold' is how closely (in points) that the shape should match the original.

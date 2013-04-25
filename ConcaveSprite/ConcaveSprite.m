@@ -109,14 +109,80 @@
 	self.chipmunkBody.moment = _normalizedMoment*density;
 }
 
-// You could make similar post-setup setters for other values you wanted to change.
+-(void)setSensor:(bool)sensor
+{
+	_sensor = sensor;
+	
+	for(id obj in self.chipmunkObjects){
+		if([obj isKindOfClass:[ChipmunkShape class]]){
+			((ChipmunkShape *)obj).sensor = sensor;
+		}
+	}
+}
+
 -(void)setElasticity:(cpFloat)elasticity
 {
 	_elasticity = elasticity;
 	
-	SEL sel = @selector(setElasticity:);
 	for(id obj in self.chipmunkObjects){
-		if([obj respondsToSelector:sel]) [obj setElasticity:elasticity];
+		if([obj isKindOfClass:[ChipmunkShape class]]){
+			((ChipmunkShape *)obj).elasticity = elasticity;
+		}
+	}
+}
+
+-(void)setFriction:(cpFloat)friction
+{
+	_friction = friction;
+	
+	for(id obj in self.chipmunkObjects){
+		if([obj isKindOfClass:[ChipmunkShape class]]){
+			((ChipmunkShape *)obj).friction = friction;
+		}
+	}
+}
+
+-(void)setSurfaceVel:(cpVect)surfaceVel
+{
+	_surfaceVel = surfaceVel;
+	
+	for(id obj in self.chipmunkObjects){
+		if([obj isKindOfClass:[ChipmunkShape class]]){
+			((ChipmunkShape *)obj).surfaceVel = surfaceVel;
+		}
+	}
+}
+
+-(void)setCollisionType:(cpCollisionType)collisionType
+{
+	_collisionType = collisionType;
+	
+	for(id obj in self.chipmunkObjects){
+		if([obj isKindOfClass:[ChipmunkShape class]]){
+			((ChipmunkShape *)obj).collisionType = collisionType;
+		}
+	}
+}
+
+-(void)setGroup:(cpGroup)group
+{
+	_group = group;
+	
+	for(id obj in self.chipmunkObjects){
+		if([obj isKindOfClass:[ChipmunkShape class]]){
+			((ChipmunkShape *)obj).group = group;
+		}
+	}
+}
+
+-(void)setLayers:(cpLayers)layers
+{
+	_layers = layers;
+	
+	for(id obj in self.chipmunkObjects){
+		if([obj isKindOfClass:[ChipmunkShape class]]){
+			((ChipmunkShape *)obj).layers = layers;
+		}
 	}
 }
 
